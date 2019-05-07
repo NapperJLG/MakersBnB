@@ -19,5 +19,8 @@
   "devDependencies": {
     "express": "^4.16.4",
     "nodemon": "^1.19.0"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1"
   }
 }
