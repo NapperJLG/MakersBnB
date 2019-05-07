@@ -22,6 +22,6 @@ I want to be able to sign up
 
 ## Authors
 
-* **Yadira Sanchez**  **Jake Napper** **Sarpong Abasimi** **Frankie Bamgboye**
+ **Yadira Sanchez**  **Jake Napper** **Sarpong Abasimi** **Frankie Bamgboye**
 
 ## Acknowledgments
