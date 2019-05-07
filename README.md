@@ -25,3 +25,6 @@ I want to be able to sign up
  **Yadira Sanchez**  **Jake Napper** **Sarpong Abasimi** **Frankie Bamgboye**
 
 ## Acknowledgments
+
+## Diary
+Day 1. Today we set up the app and basic html
