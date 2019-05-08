@@ -17,10 +17,14 @@
   },
   "homepage": "https://github.com/yadlra/MakersBnB#readme",
   "devDependencies": {
+    "cypress": "^3.2.0",
     "express": "^4.16.4",
     "nodemon": "^1.19.0"
   },
   "dependencies": {
     "ejs": "^2.6.1"
-  }
+  },
+  "scripts": {
+     "cypress:open": "cypress open"
+}
 }
