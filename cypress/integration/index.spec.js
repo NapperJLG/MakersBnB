@@ -7,9 +7,9 @@ describe("Visit page and enter essential information", function() {
     // cy.get(".form")
   })
 
-
-   it("Is able to enter post details", function () {
-   cy.get('form')
+   it("shows sign up page", function () {
+   cy.get('container').should('be.visible');
+   
 
    })
 })
