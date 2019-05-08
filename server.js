@@ -30,12 +30,12 @@ app.get('/', (req, res)=>{
     });
 });
 
-app.post('/create-space',urlencodedParser,(req, res)=>{
+app.post('/createspace',urlencodedParser,(req, res)=>{
   var data = {
-    name: req.body.name,
+    title: req.body.title,
     price: req.body.price,
     description: req.body.description,
-    datesavailable: req.body.datesavailble
+    datesavailable: req.body.datesavailable
   }
 
   MongoClient.connect((url), function(err, client){
@@ -51,8 +51,8 @@ app.post('/create-space',urlencodedParser,(req, res)=>{
 
 });
 
-app.get("/", function (req, res) {
-  res.render('login')
+app.get("/createspace", function (req, res) {
+  res.render('accomodation')
 })
 
 app.listen(3000, function (){
