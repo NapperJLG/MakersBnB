@@ -7,6 +7,10 @@ var assert = require('assert')
 
 require('dotenv').config();
 
+var MongoClient = require('mongodb').MongoClient;
+
+var url = process.env.DATABASE_URL;
+
 app.set('view engine', 'ejs');
 
 
@@ -21,7 +25,7 @@ app.get('/', (req, res)=>{
         array.push(doc)
       }, function(){
         db.close;
-        res.render('',{payload:array})
+        res.render('login',{payload:array})
       });
     });
 });
@@ -54,4 +58,3 @@ app.get("/", function (req, res) {
 app.listen(3000, function (){
   console.log("Listen on port 3000...")
 });
-

@@ -4,7 +4,7 @@
   "description": "``` A web application that allows users to list spaces they have available, and to hire spaces for the night. ```",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,9 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
+    "mongodb": "^3.2.3",
     "urlencoded-parser": "^1.0.0"
-    "scripts": {
-     "cypress:open": "cypress open"
-     }
-   }
+  }
 }
