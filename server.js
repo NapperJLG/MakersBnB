@@ -9,6 +9,7 @@ require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
+
 app.get('/', (req, res)=>{
     let array = []
     MongoClient.connect((url), function(err, client){
@@ -42,8 +43,15 @@ app.post('/create-space',urlencodedParser,(req, res)=>{
     });
   });
   res.redirect('/')
+
+
 });
+
+app.get("/", function (req, res) {
+  res.render('login')
+})
 
 app.listen(3000, function (){
   console.log("Listen on port 3000...")
 });
+
