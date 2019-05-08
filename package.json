@@ -22,9 +22,11 @@
     "nodemon": "^1.19.0"
   },
   "dependencies": {
-    "ejs": "^2.6.1"
-  },
-  "scripts": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "urlencoded-parser": "^1.0.0"
+    "scripts": {
      "cypress:open": "cypress open"
-}
+     }
+   }
 }
