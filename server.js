@@ -14,20 +14,25 @@ var url = process.env.DATABASE_URL;
 app.set('view engine', 'ejs');
 
 
-app.get('/', (req, res)=>{
-    let array = []
-    MongoClient.connect((url), function(err, client){
-      var db = client.db('makersbnb')
-      assert.equal(null, err)
-      var userData = db.collection('spaces').find({});
-      userData.forEach(function(doc, err){
-        assert.equal(null, err);
-        array.push(doc)
-      }, function(){
-        db.close;
-        res.render('login',{payload:array})
-      });
-    });
+app.get('/',urlencodedParser, (req, res)=>{
+  res.render('login');
+});
+
+
+app.post('/',urlencodedParser, (req, res)=>{
+  var users = {
+    email: req.body.email,
+    password: req.body.password
+  }
+  MongoClient.connect(url, function (err, db) {
+  var db = db.db('makersbnb')
+  assert.equal(null, err);
+  db.collection('users').insertOne(users, function() {
+  assert.equal(null, err);
+  db.close
+  });
+  });
+  res.render('login');
 });
 
 app.post('/createspace',urlencodedParser,(req, res)=>{
@@ -46,9 +51,26 @@ app.post('/createspace',urlencodedParser,(req, res)=>{
     db.close
     });
   });
-  res.redirect('/')
+  res.redirect('/space')
 
 
+});
+
+
+app.get('/space', (req, res)=>{
+    let array = []
+    MongoClient.connect((url), function(err, client){
+      var db = client.db('makersbnb')
+      assert.equal(null, err)
+      var userData = db.collection('spaces').find({});
+      userData.forEach(function(doc, err){
+        assert.equal(null, err);
+        array.push(doc)
+      }, function(){
+        db.close;
+        res.render('',{payload:array})
+      });
+    });
 });
 
 app.get("/createspace", function (req, res) {
