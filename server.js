@@ -53,8 +53,40 @@ app.post('/createspace',urlencodedParser,(req, res)=>{
     });
   });
   res.redirect('/space')
+});
 
 
+app.get('/login',(req, res)=>{
+  res.render('newlogin')
+});
+
+app.post('/login',urlencodedParser,(req, res)=>{
+  var array = [];
+
+  let userLogin = {
+    email: req.body.email,
+    password: req.body.password
+  }
+
+  MongoClient.connect((url), function(err, client){
+    var db = client.db('makersbnb')
+    assert.equal(null, err)
+    var userData = db.collection('users').find({});
+    userData.forEach(function(doc, err){
+      assert.equal(null, err);
+      console.log(doc)
+      if(doc.email == userLogin.id && doc.password == userLogin.password){
+        console.log('Logged in')
+          array.push('Logged in')
+      }else{
+        console.log('False User Id')
+        array.push('False User Id')
+      }
+    }, function(){
+      db.close;
+      res.redirect('/login')
+    });
+  });
 });
 
 
