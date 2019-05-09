@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 <head>
   <title>MakersBnB</title>
@@ -25,11 +27,8 @@
   </div>
 </nav>
     <div class="jumbotron"  style="padding:40px;">
-      <center><h1>Feel at home, anywhere</h1><center>
-      <center><h2>Sign up to MakersBnB</h2><center>
-      <!DOCTYPE html>
-      <html>
-      <head>
+      <center><h1>Your dream holiday is waiting for you!</h1><center>
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <style>
@@ -63,7 +62,14 @@
        border: solid 1px black;
        size: 25%;
        padding: 10px;
-       margin: 50px;
+       margin: 100px;
+       display: flex;
+       flex-direction: column;
+       font-size: 20px;
+     }
+
+     .space-details {
+       text-align: center;
      }
 
       .cancelbtn {
@@ -107,10 +113,10 @@
     <div class="container">
       <% payload.forEach(function(space) { %>
       <div class="space-listing">
-        <%= space.title %>
-        <%= space.price %>
-        <%= space.description %>
-        <%= space.datesavailable %>
+        <span class="space-details"><%= space.title %></span>
+        <span class="space-details"><%= space.price %></span>
+        <span class="space-details"><%= space.description %></span>
+        <span class="space-details"><%= space.datesavailable %></span>
       </div>
 
       <%}); %>
