@@ -25,16 +25,14 @@ app.post('/',urlencodedParser, (req, res)=>{
     password: req.body.password
   }
 
-  // MongoClient.connect(url, function (err, db) {
-  // var db = db.db('makersbnb')
-  // assert.equal(null, err);
-  // console.log('connect')
-  // db.collection('users').insertOne(users, function() {
-  // assert.equal(null, err);
-  // db.close
-  // });
-  // });
-  console.log(users)
+  MongoClient.connect(url, function (err, db) {
+  var db = db.db('makersbnb')
+  assert.equal(null, err);
+  db.collection('users').insertOne(users, function() {
+  assert.equal(null, err);
+  db.close
+  });
+  });
   res.redirect('/space')
 });
 
