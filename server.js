@@ -75,13 +75,6 @@ app.post('/login',urlencodedParser,(req, res)=>{
     userData.forEach(function(doc, err){
       assert.equal(null, err);
       console.log(doc)
-      if(doc.email == userLogin.id && doc.password == userLogin.password){
-        console.log('Logged in')
-          array.push('Logged in')
-      }else{
-        console.log('False User Id')
-        array.push('False User Id')
-      }
     }, function(){
       db.close;
       res.redirect('/login')
