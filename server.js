@@ -24,15 +24,18 @@ app.post('/',urlencodedParser, (req, res)=>{
     email: req.body.email,
     password: req.body.password
   }
-  MongoClient.connect(url, function (err, db) {
-  var db = db.db('makersbnb')
-  assert.equal(null, err);
-  db.collection('users').insertOne(users, function() {
-  assert.equal(null, err);
-  db.close
-  });
-  });
-  res.render('login');
+
+  // MongoClient.connect(url, function (err, db) {
+  // var db = db.db('makersbnb')
+  // assert.equal(null, err);
+  // console.log('connect')
+  // db.collection('users').insertOne(users, function() {
+  // assert.equal(null, err);
+  // db.close
+  // });
+  // });
+  console.log(users)
+  res.redirect('/space')
 });
 
 app.post('/createspace',urlencodedParser,(req, res)=>{
@@ -68,7 +71,7 @@ app.get('/space', (req, res)=>{
         array.push(doc)
       }, function(){
         db.close;
-        res.render('',{payload:array})
+        res.render('spaces',{payload:array})
       });
     });
 });
