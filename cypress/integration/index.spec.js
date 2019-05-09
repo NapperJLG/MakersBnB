@@ -4,12 +4,12 @@ describe("Visit page and enter essential information", function() {
   it('Shows homepage', function() {
 
     cy.visit("/")
-    // cy.get(".form")
+
   })
 
-   it("shows sign up page", function () {
-   cy.get('container').should('be.visible');
-   
-
-   })
+   // it("shows sign up page", function () {
+   // cy.get('container').should('be.visible');
+   //
+   //
+   // })
 })
