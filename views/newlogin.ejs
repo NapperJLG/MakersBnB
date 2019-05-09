@@ -16,7 +16,7 @@
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/about">Spaces</a>
+        <a href="/about">Accommodation</a>
       </li>
       <li>
         <a href="/sitemap">Sitemap</a>
@@ -31,7 +31,6 @@
       <html>
       <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <style>
       body {font-family: Arial, Helvetica, sans-serif;}
       form {border: 3px solid #f1f1f1;}
@@ -59,13 +58,6 @@
         opacity: 0.8;
       }
 
-     .space-listing {
-       border: solid 1px black;
-       size: 25%;
-       padding: 10px;
-       margin: 50px;
-     }
-
       .cancelbtn {
         width: auto;
         padding: 10px 18px;
@@ -79,10 +71,7 @@
 
 
       .container {
-        display: flex;
-        padding: 25px;
-        justify-content: center;
-        flex-wrap: wrap;
+        padding: 16px;
       }
 
       span.psw {
@@ -101,19 +90,22 @@
         }
       }
 
-    </style>
-    </div>
+      </style>
+      <form action="/" method='post'>
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter email-address" name="email" required>
 
-    <div class="container">
-      <% payload.forEach(function(space) { %>
-      <div class="space-listing">
-        <%= space.title %>
-        <%= space.price %>
-        <%= space.description %>
-        <%= space.datesavailable %>
-      </div>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
 
-      <%}); %>
-    </div>
-    </body>
-    </html>
+          <button type="submit">Log in</button>
+
+          <label>
+          </label>
+        </div>
+        </div>
+      </form>
+
+      </body>
+      </html>
