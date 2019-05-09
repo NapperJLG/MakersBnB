@@ -90,7 +90,12 @@
            width: 100%;
         }
       }
-      
+
     </style>
+    <div class="">
+      <% payload.forEach(function(space) { %>
+      <%= space.title %>
+      <%}); %>
+    </div>
     </body>
     </html>
