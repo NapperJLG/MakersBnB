@@ -62,7 +62,8 @@ app.get('/login',(req, res)=>{
 
 app.post('/login',urlencodedParser,(req, res)=>{
   var array = [];
-
+  var confirm = [];
+  var message = [];
   let userLogin = {
     email: req.body.email,
     password: req.body.password
@@ -74,9 +75,22 @@ app.post('/login',urlencodedParser,(req, res)=>{
     var userData = db.collection('users').find({});
     userData.forEach(function(doc, err){
       assert.equal(null, err);
-      console.log(doc)
+
+      array.push(doc)
+
+
     }, function(){
       db.close;
+      array.some(e => {
+        confirm.push(e['email'] == userLogin.email && e['password'] == userLogin.password)
+      })
+      console.log(confirm.includes(true))
+      if (confirm.includes(true)) {
+        message.push('You are now logged in')
+      } else {
+        message.push('Incorrect login details')
+      }
+      console.log(message)
       res.redirect('/login')
     });
   });
