@@ -101,6 +101,7 @@ app.post('/login',urlencodedParser,(req, res)=>{
 
 app.get('/success', (req, res)=>{
   const sessionMessage = req.session.message
+  console.log(sessionMessage)
   res.render('loginsuccessful', {loginmessage:sessionMessage})
 })
 
