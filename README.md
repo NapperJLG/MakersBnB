@@ -5,7 +5,7 @@ A web application that allows users to list spaces they have available, and to h
 
 ## Getting Started
 
-### Installing
+
 
 ## User Stories
 ```
@@ -18,22 +18,19 @@ So I can list a space on MakersBnB
 I want to be able to log in
 
 As a User
-So I can list a space on MakersBnB
-I want to be able to 
+So I can see all spaces on MakersBnB
+I want to be able to list a space
 
 ```
 
-## Running the tests
 
 ## Built With
+```
+**Express.js**   **MongoDB**  
+```
 
 ## Approach
 
 ## Authors
 
  **Yadira Sanchez**  **Jake Napper** **Sarpong Abasimi** **Frankie Bamgboye**
-
-## Acknowledgments
-
-## Diary
-Day 1. Today we set up the app and basic html
