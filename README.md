@@ -12,6 +12,15 @@ A web application that allows users to list spaces they have available, and to h
 As a User
 So I can list a space on MakersBnB
 I want to be able to sign up
+
+As a User
+So I can list a space on MakersBnB
+I want to be able to log in
+
+As a User
+So I can list a space on MakersBnB
+I want to be able to 
+
 ```
 
 ## Running the tests
