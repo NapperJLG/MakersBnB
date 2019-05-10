@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 <head>
   <title>MakersBnB</title>
@@ -16,24 +18,27 @@
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/about">Spaces</a>
+        <a href="/login">Log in</a>
       </li>
       <li>
-        <a href="/sitemap">Sitemap</a>
+        <a href="/space">Spaces</a>
+      </li>
+      <li>
+        <a href="/createspace">List spaces</a>
       </li>
     </ul>
   </div>
 </nav>
     <div class="jumbotron"  style="padding:40px;">
-      <center><h1>Feel at home, anywhere</h1><center>
-      <center><h2>Sign up to MakersBnB</h2><center>
-      <!DOCTYPE html>
-      <html>
-      <head>
+      <center><h1>Your dream holiday is waiting for you!</h1><center>
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <style>
-      body {font-family: Arial, Helvetica, sans-serif;}
+      body {
+        background-color: #83ead2;
+        font-family: Arial, Helvetica, sans-serif;
+      }
       form {border: 3px solid #f1f1f1;}
 
       input[type=text], input[type=password] {
@@ -61,9 +66,17 @@
 
      .space-listing {
        border: solid 1px black;
+       background-color: white;
        size: 25%;
        padding: 10px;
-       margin: 50px;
+       margin: 100px;
+       display: flex;
+       flex-direction: column;
+       font-size: 20px;
+     }
+
+     .space-details {
+       text-align: center;
      }
 
       .cancelbtn {
@@ -107,10 +120,10 @@
     <div class="container">
       <% payload.forEach(function(space) { %>
       <div class="space-listing">
-        <%= space.title %>
-        <%= space.price %>
-        <%= space.description %>
-        <%= space.datesavailable %>
+        <span class="space-details"><%= space.title %></span>
+        <span class="space-details"><%= space.price %></span>
+        <span class="space-details"><%= space.description %></span>
+        <span class="space-details"><%= space.datesavailable %></span>
       </div>
 
       <%}); %>
