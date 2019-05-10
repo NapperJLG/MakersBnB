@@ -11,7 +11,12 @@ var MongoClient = require('mongodb').MongoClient;
 var url = process.env.DATABASE_URL;
 
 app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+
+
 app.use(session({secret: 'mySecret', resave:false, saveUnitialized:false}));
+
 
 app.get('/',urlencodedParser, (req, res)=>{
   res.render('login');
