@@ -4,15 +4,14 @@ var app = express ();
 var bodyparser = require('body-parser');
 var urlencodedParser = bodyparser.urlencoded({extended: false});
 var assert = require('assert')
+var session = require('express-session')
 
 require('dotenv').config();
-
 var MongoClient = require('mongodb').MongoClient;
-
 var url = process.env.DATABASE_URL;
 
 app.set('view engine', 'ejs');
-
+app.use(session({secret: 'mySecret', resave:false, saveUnitialized:false}));
 
 app.get('/',urlencodedParser, (req, res)=>{
   res.render('login');
@@ -84,17 +83,21 @@ app.post('/login',urlencodedParser,(req, res)=>{
       array.some(e => {
         confirm.push(e['email'] == userLogin.email && e['password'] == userLogin.password)
       })
-      console.log(confirm.includes(true))
       if (confirm.includes(true)) {
-        message.push('You are now logged in')
+        message.push('Login successful')
       } else {
         message.push('Incorrect login details')
       }
-      console.log(message)
-      res.redirect('/login')
+      req.session.message = message[0]
+      res.redirect('/success')
     });
   });
 });
+
+app.get('/success', (req, res)=>{
+  const sessionMessage = req.session.message
+  res.render('loginsuccessful', {loginmessage:sessionMessage})
+})
 
 
 app.get('/space', (req, res)=>{
