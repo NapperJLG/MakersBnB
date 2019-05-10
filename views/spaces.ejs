@@ -4,6 +4,7 @@
 <head>
   <title>MakersBnB</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -63,8 +64,9 @@
       }
 
       img {
-        height: 50%;
-        width: 50%;
+        height: 95%;
+        width: 95%;
+        object-fit: contain;
       }
 
       button:hover {
@@ -74,17 +76,25 @@
      .space-listing {
        border: solid 1px black;
        background-color: white;
-       size: auto;
-       padding: 10px;
-       margin: 100px;
+       margin: 50px;
        display: flex;
        flex-direction: column;
-       font-size: 20px;
-
+       justify-content: center;
+       font-size: 40px;
+       width: 50%;
+       font-family: 'Montserrat', sans-serif;
      }
 
      .space-details {
        text-align: center;
+       align-self: center;
+       background-color: white;
+
+     }
+
+     .space-image {
+       align-self: center;
+
      }
 
       .cancelbtn {
@@ -104,6 +114,7 @@
         padding: 25px;
         justify-content: center;
         flex-wrap: wrap;
+
       }
 
       span.psw {
@@ -132,7 +143,8 @@
         <span class="space-details"><%= space.price %></span>
         <span class="space-details"><%= space.description %></span>
         <span class="space-details"><%= space.datesavailable %></span>
-        <img src="images/holidayhouse.jpg" alt="">
+        <img class="space-image" src="images/holidayhouse.jpg" alt="">
+        <button class= "btn btn-primary" type="button" name="button">Click to book</button>
       </div>
 
 
