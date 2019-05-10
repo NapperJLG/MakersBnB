@@ -75,7 +75,10 @@ app.post('/login',urlencodedParser,(req, res)=>{
     var userData = db.collection('users').find({});
     userData.forEach(function(doc, err){
       assert.equal(null, err);
+
       array.push(doc)
+
+
     }, function(){
       db.close;
       array.some(e => {
